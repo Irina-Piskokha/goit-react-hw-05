@@ -1,0 +1,16 @@
+.navigation {
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.active {
+  color: rgba(124, 4, 4, 0.709);
+}
+.link:hover {
+  color: rgba(124, 4, 4, 0.709);
+}
