@@ -1,3 +1,20 @@
+.btnGoBack {
+  display: block;
+  margin-top: 20px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: rgba(124, 4, 4, 0.709);
+  width: 70px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid rgba(124, 4, 4, 0.709);
+}
+
+.btnGoBack:hover,
+.btnGoBack:focus {
+  background-color: rgba(255, 190, 190, 0.459);
+}
+
 .title {
   margin: 20px 0;
 }

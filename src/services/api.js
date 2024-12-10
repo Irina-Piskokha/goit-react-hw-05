@@ -27,6 +27,21 @@ export const fetchMovieById = async (movieId) => {
   return data;
 };
 
+export const fetchFilmByQuery = async (query) => {
+  const { data } = await axios.get(
+    "https://api.themoviedb.org/3/search/movie",
+    {
+      params: {
+        query: query,
+      },
+      headers: {
+        Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  return data;
+};
+
 export const fetchMovieCredits = async (movieId) => {
   const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits`,

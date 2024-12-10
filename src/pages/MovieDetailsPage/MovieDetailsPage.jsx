@@ -1,8 +1,17 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import s from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { fetchMovieById } from "../../services/api";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { Suspense } from "react";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -11,25 +20,38 @@ const buildLinkClass = ({ isActive }) => {
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const location = useLocation();
+  const goBackLink = useRef(location.state ?? `/movies`);
 
   useEffect(() => {
     const getMovieById = async () => {
       try {
+        setIsLoading(true);
+        setIsError(false);
         const data = await fetchMovieById(movieId);
         setMovie(data);
       } catch (error) {
-        console.log(error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
       }
     };
     getMovieById();
   }, [movieId]);
 
   if (!movie) {
-    return <h2>Loading data...</h2>;
+    return <div>No movie details</div>;
   }
 
   return (
     <div>
+      <Link to={goBackLink.current} className={s.btnGoBack}>
+        Go back
+      </Link>
+      {isLoading && <Loader />}
+      {isError && <ErrorMessage />}
       <div className={s.wrapper}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -56,7 +78,9 @@ const MovieDetailsPage = () => {
           Movie Reviews
         </NavLink>
       </nav>
-      <Outlet />
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

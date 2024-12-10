@@ -1,0 +1,32 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.castItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 150px;
+  height: 280px;
+  box-sizing: border-box;
+}
+
+.castName {
+  font-size: 14px;
+}
+
+.castCharacter {
+  font-size: 12px;
+}
+
+.castNoImage {
+  display: block;
+  background-color: azure;
+  width: 150px;
+  height: 280px;
+  font-size: 14px;
+  text-align: center;
+}
