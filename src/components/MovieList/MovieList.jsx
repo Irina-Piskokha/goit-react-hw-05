@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import s from "./MovieList.module.css";
 
-const MovieList = ({ films, location }) => {
+const MovieList = ({ films }) => {
+  const location = useLocation();
   return (
     <ul className={s.list}>
       {films.map((item) => {

@@ -10,7 +10,6 @@ const HomePage = () => {
   const [films, setFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const getTrendingMovies = async () => {
@@ -34,7 +33,7 @@ const HomePage = () => {
       <h1 className={s.title}>Trending today</h1>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      <MovieList films={films} location={location} />
+      <MovieList films={films} />
     </div>
   );
 };
