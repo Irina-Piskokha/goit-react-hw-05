@@ -5,12 +5,21 @@
 
 .link {
   font-weight: bold;
-  font-size: 17px;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .link {
+    font-size: 17px;
+  }
 }
 
 .active {
-  color: rgba(124, 4, 4, 0.709);
+  color: #d72323;
 }
-.link:hover {
-  color: rgba(124, 4, 4, 0.709);
+.link:hover,
+.link:focus {
+  border-bottom: 2px solid #d72323;
+  transition: border-bottom 0.4s ease;
 }

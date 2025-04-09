@@ -1,7 +1,9 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+// import Navigation from "./components/Navigation/Navigation";
 import { lazy, Suspense } from "react";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
@@ -16,8 +18,8 @@ const MovieReviews = lazy(() =>
 
 function App() {
   return (
-    <div>
-      <Navigation />
+    <>
+      <Header />
       <Suspense fallback={<div>Loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -29,7 +31,8 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-    </div>
+      <Footer />
+    </>
   );
 }
 

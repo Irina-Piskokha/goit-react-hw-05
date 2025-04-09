@@ -33,6 +33,7 @@ const MovieDetailsPage = () => {
         const data = await fetchMovieById(movieId);
         setMovie(data);
       } catch (error) {
+        console.log(error);
         setIsError(true);
       } finally {
         setIsLoading(false);
@@ -46,7 +47,7 @@ const MovieDetailsPage = () => {
   }
 
   return (
-    <div>
+    <div className={"container"}>
       <Link to={goBackLink.current} className={s.btnGoBack}>
         Go back
       </Link>

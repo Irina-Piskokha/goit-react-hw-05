@@ -1,0 +1,27 @@
+/* Mobile (від 320px, базова стилізація) */
+.container {
+  /* width: 100%; */
+  min-width: 320px;
+  /* max-width: 375px; */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Tablet (від 768px) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/* Desktop (від 1440px) */
+@media (min-width: 1220px) {
+  .container {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    max-width: 1220px;
+  }
+}

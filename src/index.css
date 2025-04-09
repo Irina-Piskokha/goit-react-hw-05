@@ -1,8 +1,9 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  background-color: rgba(255, 196, 200, 0.287);
-  margin: 30px 50px;
+  background-color: #303840;
+  color: #ededed;
+  margin: 0 auto;
 }
 
 h1,
@@ -13,6 +14,7 @@ h5,
 h6,
 p {
   margin: 0;
+  color: #ededed;
 }
 
 ul,

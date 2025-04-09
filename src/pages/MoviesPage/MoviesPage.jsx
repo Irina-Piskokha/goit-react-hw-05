@@ -27,6 +27,7 @@ const MoviesPage = () => {
         }
         setFilms(results);
       } catch (error) {
+        console.log(error);
         setIsError(true);
       } finally {
         setIsLoading(false);
@@ -45,7 +46,7 @@ const MoviesPage = () => {
   );
 
   return (
-    <div>
+    <div className={"container"}>
       <SearchBar handleSetQuery={handleSetQuery} />
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}

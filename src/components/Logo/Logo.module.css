@@ -1,0 +1,15 @@
+.logo {
+  font-size: 19px;
+  font-weight: bold;
+  color: #d72323;
+}
+
+.logo span {
+  color: #ededed;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    font-size: 21px;
+  }
+}

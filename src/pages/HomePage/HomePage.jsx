@@ -2,7 +2,6 @@ import s from "./HomePage.module.css";
 import { fetchTrendingMovies } from "../../services/api.js";
 import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList.jsx";
-import { useLocation } from "react-router-dom";
 import Loader from "../../components/Loader/Loader.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 
@@ -19,6 +18,7 @@ const HomePage = () => {
         const { results } = await fetchTrendingMovies();
         setFilms(results);
       } catch (error) {
+        console.log(error);
         setIsError(true);
       } finally {
         setIsLoading(false);
@@ -29,8 +29,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className={s.title}>Trending today</h1>
+    <div className={"container"}>
+      <h1 className={s.title}>Trending movies today</h1>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       <MovieList films={films} />

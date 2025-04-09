@@ -1,0 +1,30 @@
+.wrapper {
+  background-color: #25282b;
+  padding: 15px 0;
+}
+
+.footerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  fill: #d72323;
+}
+
+.text {
+  font-size: 13px;
+}
+
+.textFlex {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .textFlex {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+}

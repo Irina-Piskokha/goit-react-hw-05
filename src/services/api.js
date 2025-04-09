@@ -12,6 +12,7 @@ export const fetchTrendingMovies = async () => {
       },
     }
   );
+  console.log(data);
   return data;
 };
 

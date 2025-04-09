@@ -14,6 +14,7 @@ const MovieList = ({ films }) => {
                   className={s.img}
                   src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
                   alt={item.original_title}
+                  loading="lazy"
                 />
               ) : (
                 <p className={s.castNoImage}>No poster</p>

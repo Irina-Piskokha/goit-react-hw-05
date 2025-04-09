@@ -1,0 +1,10 @@
+.wrapper {
+  background-color: #25282b;
+  padding: 15px 0;
+}
+
+.headerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
