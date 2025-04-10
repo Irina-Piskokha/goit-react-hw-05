@@ -3,9 +3,9 @@ import axios from "axios";
 const API_READ_ACCESS_TOKEN =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDQzMjJkYzYyZDM5M2I5OTgyZWVlYzM3ODkwOWJlNSIsIm5iZiI6MTczMjg4ODQ0Mi4yMTU4NzE2LCJzdWIiOiI2NzQ5YzUwMjBkYTUyZTI3N2VmNDFkMjEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.GW9x0Sp02x4yGU4dvgMJSrIXxRdlyFQDerCUYhGsdCo";
 
-export const fetchTrendingMovies = async () => {
+export const fetchTrendingMovies = async (page) => {
   const { data } = await axios.get(
-    "https://api.themoviedb.org/3/trending/movie/day",
+    `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${page}}`,
     {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,

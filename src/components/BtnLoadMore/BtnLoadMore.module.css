@@ -1,0 +1,8 @@
+.btnLoadMore {
+  border: 1px solid var(--color-text);
+  padding: 10px 30px;
+  margin: 30px 0 30px auto;
+  display: block;
+  border-radius: 3px;
+  font-size: 13px;
+}

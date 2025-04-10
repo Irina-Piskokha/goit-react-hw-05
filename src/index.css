@@ -1,3 +1,12 @@
+:root {
+  --bg-menu: #25252b;
+  --bg-main: #303840;
+  --bg-item: #3a4750;
+
+  --color-text: #ededed;
+  --color-accent: #d72323;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.5;
