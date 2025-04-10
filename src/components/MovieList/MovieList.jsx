@@ -33,7 +33,7 @@ const MovieList = ({
         // onScroll={handleScroll}
       >
         <ul className={s.list}>
-          {films.map((item) => (
+          {films?.map((item) => (
             <li key={item.id} className={s.movie}>
               <Link
                 to={`/movies/${item.id}`}

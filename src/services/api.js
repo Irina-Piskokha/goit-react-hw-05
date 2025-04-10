@@ -16,6 +16,32 @@ export const fetchTrendingMovies = async (page) => {
   return data;
 };
 
+export const fetchTopRated = async (page) => {
+  const { data } = await axios.get(
+    `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  console.log(data);
+  return data;
+};
+
+export const fetchPopular = () => {
+  const data = axios.get(
+    `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
+      },
+    }
+  );
+  console.log(data);
+  return data;
+};
+
 export const fetchMovieById = async (movieId) => {
   const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}`,
