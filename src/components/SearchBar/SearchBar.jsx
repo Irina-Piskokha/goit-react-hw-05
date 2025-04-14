@@ -21,7 +21,7 @@ const SearchBar = ({ handleSetQuery }) => {
         toastOptions={{
           style: {
             background: "black",
-            color: "#fff",
+            color: "#ededed",
           },
         }}
       />

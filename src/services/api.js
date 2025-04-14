@@ -12,7 +12,6 @@ export const fetchTrendingMovies = async (page) => {
       },
     }
   );
-  // console.log(data);
   return data;
 };
 
@@ -25,7 +24,6 @@ export const fetchTopRated = async (page) => {
       },
     }
   );
-  // console.log(data);
   return data;
 };
 
@@ -38,13 +36,17 @@ export const fetchPopular = async () => {
       },
     }
   );
-  // console.log(data);
   return data;
 };
 
 export const fetchMovieById = async (movieId) => {
   const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}`,
+    {
+      params: {
+        language: "en-US",
+      },
+    },
     {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
@@ -60,6 +62,7 @@ export const fetchFilmByQuery = async (query) => {
     {
       params: {
         query: query,
+        language: "en-US",
       },
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
@@ -73,6 +76,11 @@ export const fetchMovieCredits = async (movieId) => {
   const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits`,
     {
+      params: {
+        language: "en-US",
+      },
+    },
+    {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
       },
@@ -84,6 +92,11 @@ export const fetchMovieCredits = async (movieId) => {
 export const fetchMovieReviews = async (movieId) => {
   const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/reviews`,
+    {
+      params: {
+        language: "en-US",
+      },
+    },
     {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,

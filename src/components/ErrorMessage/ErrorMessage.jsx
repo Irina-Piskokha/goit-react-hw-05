@@ -1,7 +1,9 @@
+import s from "./ErrorMessage.module.css";
+
 const ErrorMessage = () => {
   return (
     <div>
-      <p>Reload the page!..</p>
+      <p className={s.text}>Reload the page!..</p>
     </div>
   );
 };

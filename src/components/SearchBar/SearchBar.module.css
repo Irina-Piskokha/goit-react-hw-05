@@ -9,7 +9,6 @@
   display: block;
   width: 230px;
   height: 35px;
-  border: 1px solid rgba(124, 4, 4, 0.463);
   border-radius: 30px;
   padding: 7px 15px;
   font-size: 12px;
@@ -17,16 +16,17 @@
 }
 
 .btn {
-  background-color: rgba(124, 4, 4, 0.463);
-  color: #fff;
+  background-color: transparent;
+  color: var(--color-text);
   display: block;
   width: 100px;
   height: 35px;
   border-radius: 30px;
-  border: 1px solid rgba(124, 4, 4, 0.463);
+  border: 1px solid var(--color-text);
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: rgba(124, 4, 4, 0.606);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }

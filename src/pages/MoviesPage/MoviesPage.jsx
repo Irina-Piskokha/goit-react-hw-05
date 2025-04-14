@@ -6,6 +6,8 @@ import { useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import toast, { Toaster } from "react-hot-toast";
+import clsx from "clsx";
+import s from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const [films, setFilms] = useState([]);
@@ -46,7 +48,7 @@ const MoviesPage = () => {
   );
 
   return (
-    <div className={"container"}>
+    <div className={clsx("container", s.wrapper)}>
       <SearchBar handleSetQuery={handleSetQuery} />
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
@@ -54,7 +56,7 @@ const MoviesPage = () => {
         toastOptions={{
           style: {
             background: "black",
-            color: "#fff",
+            color: "#ededed",
           },
         }}
       />

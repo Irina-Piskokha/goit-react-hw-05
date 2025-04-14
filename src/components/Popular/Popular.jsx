@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import s from "./Popular.module.css";
 import { fetchPopular } from "../../services/api.js";
 import MovieSliderList from "../MovieSliderList/MovieSliderList.jsx";
+import Loader from "../Loader/Loader.jsx";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
 const Popular = () => {
   const [films, setFilms] = useState([]);
@@ -30,7 +32,8 @@ const Popular = () => {
 
   return (
     <div className={s.title}>
-      <MovieSliderList films={films} />
+      {isError && <ErrorMessage />}
+      {isLoading ? <Loader /> : <MovieSliderList films={films} />}
     </div>
   );
 };
