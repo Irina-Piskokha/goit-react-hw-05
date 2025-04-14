@@ -18,14 +18,6 @@ const TrendingToday = () => {
         setIsError(false);
         const { results } = await fetchTrendingMovies(page);
         setFilms(results);
-        // setFilms((prev) => {
-        //   const combined = [...prev, ...results];
-        //   const unique = combined.filter(
-        //     (film, index, self) =>
-        //       index === self.findIndex((f) => f.id === film.id)
-        //   );
-        //   return unique;
-        // });
       } catch (error) {
         console.log(error);
         setIsError(true);

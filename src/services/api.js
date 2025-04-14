@@ -12,7 +12,7 @@ export const fetchTrendingMovies = async (page) => {
       },
     }
   );
-  console.log(data);
+  // console.log(data);
   return data;
 };
 
@@ -25,12 +25,12 @@ export const fetchTopRated = async (page) => {
       },
     }
   );
-  console.log(data);
+  // console.log(data);
   return data;
 };
 
-export const fetchPopular = () => {
-  const data = axios.get(
+export const fetchPopular = async () => {
+  const { data } = await axios.get(
     `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,
     {
       headers: {
@@ -38,7 +38,7 @@ export const fetchPopular = () => {
       },
     }
   );
-  console.log(data);
+  // console.log(data);
   return data;
 };
 

@@ -8,30 +8,11 @@ const MovieList = ({
   handleLoadMoreClickPlus,
   page,
 }) => {
-  // const scrollRef = useRef(null);
   const location = useLocation();
-
-  // const handleScroll = () => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
-
-  //   const isAtEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 5;
-  //   setShowButton(isAtEnd);
-  // };
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     handleScroll();
-  //   }, 100);
-  // }, [films, page]);
 
   return (
     <>
-      <div
-        className={s.sliderContainer}
-        // ref={scrollRef}
-        // onScroll={handleScroll}
-      >
+      <div className={s.sliderContainer}>
         <ul className={s.list}>
           {films?.map((item) => (
             <li key={item.id} className={s.movie}>
@@ -62,8 +43,6 @@ const MovieList = ({
         handleLoadMoreClickMinus={handleLoadMoreClickMinus}
         handleLoadMoreClickPlus={handleLoadMoreClickPlus}
       />
-
-      {/* {showButton && <BtnLoadMore handleLoadMoreClick={handleLoadMoreClick} />} */}
     </>
   );
 };
