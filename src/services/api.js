@@ -64,6 +64,7 @@ export const fetchFilmByQuery = async (query) => {
       },
     }
   );
+  console.log(data);
   return data;
 };
 
@@ -94,55 +95,6 @@ export const fetchMovieReviews = async (movieId) => {
       },
     }
   );
+
   return data;
 };
-
-// ==========================
-
-// export const fetchSearchMovie = async (query, fileSize = "w200") => {
-//   if (!query) {
-//     console.error("Search query is required!");
-//     return [];
-//   }
-
-//   try {
-// const base_url = await fetchPosters();
-// if (!base_url) {
-//   throw new Error("Failed to fetch base URL for images.");
-// }
-
-// const { data } = await axios.get(
-//   "https://api.themoviedb.org/3/search/movie",
-//   {
-//     params: {
-//       query,
-//       language: "en-US",
-//       page: 1,
-//     },
-//     headers: {
-//       Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
-//     },
-//   }
-// );
-
-// console.log(data);
-
-// const moviesWithPosters = data.results.map((movie) => ({
-//   id: movie.id,
-//   title: movie.title || "Untitled",
-//   release_date: movie.release_date,
-//   posterUrl: movie.poster_path
-//     ? `https://api.themoviedb.org/3${fileSize}${movie.poster_path}`
-//     : "/path-to-placeholder-image.jpg",
-// }));
-
-// console.log(moviesWithPosters);
-
-// return moviesWithPosters;
-//   } catch (error) {
-//     console.error("Error fetching movies:", error.message);
-//     return [];
-//   }
-// };
-
-// fetchSearchMovie("super");

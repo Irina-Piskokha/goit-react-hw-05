@@ -15,6 +15,7 @@
 
 .item {
   width: calc((100% - 10px) / 2);
+  background-color: var(--bg-item);
 }
 
 @media only screen and (min-width: 768px) {
@@ -55,5 +56,37 @@
 @media only screen and (min-width: 1220px) {
   .imgNoPoster {
     height: 153px;
+  }
+}
+
+.title {
+  font-size: 12px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.titleDate {
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.movieNoPoster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-item);
+  font-size: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .movieNoPoster {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  .movieNoPoster {
+    font-size: 14px;
   }
 }

@@ -1,6 +1,5 @@
 import s from "./MovieSliderList.module.css";
 import { Link } from "react-router-dom";
-import img from "../../image/no_poster.png";
 
 const MovieSliderList = ({ films, filteredData }) => {
   return (
@@ -17,13 +16,10 @@ const MovieSliderList = ({ films, filteredData }) => {
                   loading="lazy"
                 />
               ) : (
-                <img
-                  className={s.imgNoPoster}
-                  src={img}
-                  alt="No poster"
-                  loading="lazy"
-                />
+                <p className={s.movieNoPoster}>No poster</p>
               )}
+              <p className={s.title}>{item.original_title}</p>
+              <p className={s.titleDate}>{item.release_date}</p>
             </Link>
           </li>
         ))}
