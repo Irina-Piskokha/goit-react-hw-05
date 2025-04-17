@@ -1,18 +1,19 @@
 .btnGoBack {
   display: block;
   margin-top: 20px;
-  padding: 4px 8px;
+  padding: 6px 20px;
+  text-align: center;
   font-size: 14px;
-  color: rgba(124, 4, 4, 0.709);
-  width: 70px;
-  height: 30px;
-  border-radius: 7px;
-  border: 1px solid rgba(124, 4, 4, 0.709);
+  color: var(--color-text);
+  width: 100px;
+  border-radius: 30px;
+  border: 1px solid var(--color-text);
 }
 
 .btnGoBack:hover,
 .btnGoBack:focus {
-  background-color: rgba(255, 190, 190, 0.459);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 
 .title {
@@ -27,16 +28,23 @@
 }
 
 .active {
-  color: rgba(124, 4, 4, 0.709);
+  color: var(--color-accent);
 }
 .link:hover {
-  color: rgba(124, 4, 4, 0.709);
+  color: var(--color-accent);
 }
 
 .wrapper {
   display: flex;
+  flex-direction: column;
   gap: 50px;
   margin-top: 30px;
+}
+
+@media only screen and (min-width: 1220px) {
+  .wrapper {
+    flex-direction: row;
+  }
 }
 
 .wrapperDescription {

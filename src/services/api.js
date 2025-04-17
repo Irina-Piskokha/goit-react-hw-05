@@ -74,8 +74,6 @@ export const fetchMovieCredits = async (movieId) => {
       params: {
         language: "en-US",
       },
-    },
-    {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
       },
@@ -91,8 +89,6 @@ export const fetchMovieReviews = async (movieId) => {
       params: {
         language: "en-US",
       },
-    },
-    {
       headers: {
         Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`,
       },

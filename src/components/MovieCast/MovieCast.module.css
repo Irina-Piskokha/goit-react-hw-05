@@ -1,6 +1,7 @@
 .castList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 20px;
 }
 
@@ -9,24 +10,62 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 150px;
-  height: 280px;
+  width: calc((100% - 60px) / 4);
   box-sizing: border-box;
 }
 
+@media only screen and (min-width: 768px) {
+  .castItem {
+    width: calc((100% - 80px) / 5);
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  .castItem {
+    width: calc((100% - 100px) / 6);
+  }
+}
+
 .castName {
-  font-size: 14px;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1220px) {
+  .castName {
+    font-size: 14px;
+  }
 }
 
 .castCharacter {
-  font-size: 12px;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1220px) {
+  .castCharacter {
+    font-size: 12px;
+  }
 }
 
 .castNoImage {
-  display: block;
-  background-color: azure;
-  width: 150px;
-  height: 280px;
-  font-size: 14px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-item);
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .castNoImage {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  .castNoImage {
+    font-size: 14px;
+  }
 }
