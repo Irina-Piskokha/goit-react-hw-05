@@ -1,14 +1,18 @@
 import TrendingToday from "../../components/TrendingToday/TrendingToday.jsx";
 import TopRated from "../../components/TopRated/TopRated.jsx";
 import Popular from "../../components/Popular/Popular.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 const HomePage = () => {
   return (
-    <div className={"container"}>
-      <Popular />
-      <TrendingToday />
-      <TopRated />
-    </div>
+    <>
+      <div className={"container"}>
+        <TrendingToday />
+        <TopRated />
+        <Popular />
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { fetchFilmByQuery } from "../../services/api";
-import MovieList from "../../components/MovieList/MovieList";
+import MovieSliderList from "../../components/MovieSliderList/MovieSliderList.jsx";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -60,7 +60,7 @@ const MoviesPage = () => {
           },
         }}
       />
-      <MovieList films={filteredData} />
+      <MovieSliderList films={filteredData} />
     </div>
   );
 };

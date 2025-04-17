@@ -17,7 +17,6 @@ const Popular = () => {
         setIsError(false);
         const { results } = await fetchPopular();
         setFilms(results);
-        console.log(results);
         return results;
       } catch (error) {
         console.log(error);

@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 // import Navigation from "./components/Navigation/Navigation";
 import { lazy, Suspense } from "react";
 import Header from "./components/Header/Header.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
@@ -31,7 +30,6 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-      <Footer />
     </>
   );
 }

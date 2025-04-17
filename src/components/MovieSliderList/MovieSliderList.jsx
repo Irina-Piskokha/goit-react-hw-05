@@ -1,11 +1,12 @@
 import s from "./MovieSliderList.module.css";
 import { Link } from "react-router-dom";
+import img from "../../image/no_poster.png";
 
-const MovieSliderList = ({ films }) => {
+const MovieSliderList = ({ films, filteredData }) => {
   return (
-    <div className={s.sliderContainer}>
+    <>
       <ul className={s.list}>
-        {films.map((item) => (
+        {(filteredData?.length > 0 ? filteredData : films).map((item) => (
           <li key={item.id} className={s.item}>
             <Link to={`/movies/${item.id}`} className={s.link}>
               {item.backdrop_path ? (
@@ -16,13 +17,18 @@ const MovieSliderList = ({ films }) => {
                   loading="lazy"
                 />
               ) : (
-                <p className={s.castNoImage}>No poster</p>
+                <img
+                  className={s.imgNoPoster}
+                  src={img}
+                  alt="No poster"
+                  loading="lazy"
+                />
               )}
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

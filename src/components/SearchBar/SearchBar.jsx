@@ -16,7 +16,7 @@ const SearchBar = ({ handleSetQuery }) => {
     query: "",
   };
   return (
-    <div>
+    <>
       <Toaster
         toastOptions={{
           style: {
@@ -37,7 +37,7 @@ const SearchBar = ({ handleSetQuery }) => {
           </button>
         </Form>
       </Formik>
-    </div>
+    </>
   );
 };
 
